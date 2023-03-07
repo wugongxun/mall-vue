@@ -4,6 +4,7 @@ import cloneDeep from 'lodash/cloneDeep'
 import common from './modules/common'
 import user from './modules/user'
 import category from './modules/product/category'
+import brand from './modules/product/brand'
 
 Vue.use(Vuex)
 
@@ -11,7 +12,8 @@ export default new Vuex.Store({
   modules: {
     common,
     user,
-    category
+    category,
+    brand
   },
   mutations: {
     // 重置vuex本地储存状态

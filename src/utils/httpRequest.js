@@ -31,7 +31,7 @@ http.interceptors.response.use(response => {
     clearLoginInfo()
     router.push({ name: 'login' })
   }
-  return response.data
+  return response
 }, error => {
   return Promise.reject(error)
 })
