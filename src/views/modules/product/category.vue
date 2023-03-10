@@ -30,7 +30,7 @@
                     添加
                     </el-button>
                     <el-button
-                        v-if="data.children.length == 0"
+                        v-if="!data.children || data.children.length == 0"
                         type="text"
                         size="mini"
                         @click="remove(node, data)">
@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import {mapActions, mapState} from 'vuex'
+import {mapActions} from 'vuex'
 
 export default {
     name: 'Category',
@@ -142,6 +142,7 @@ export default {
         },
         edit(data) {
             Object.assign(this.category, data);
+            this.expandedKeys = [data.catId];
             this.dialogVisible = true;
         },
         allowDrop(draggingNode, dropNode, type) {
